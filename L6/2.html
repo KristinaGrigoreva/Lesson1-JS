@@ -66,8 +66,8 @@
   также должен меняться.
   */
   const spanEl = document.querySelector('span');
-  document.querySelector('input').addEventListener('input', e => {
-    spanEl.textContent = e.target.value;
+  document.getElementById('from').addEvenListener('input', event => {
+    spanEl.textContent = event.target.value;
   });
 
   /*
@@ -76,10 +76,10 @@
   1) добавить два класса: animate__animated и animate__fadeInLeftBig
   2) поставить данному элементу стиль visibility в значение 'visible'.
    */
-  const message = document.querySelector('.message');
-  document.querySelector('button').addEventListener('click', () => {
+  const messageEl = document.querySelector('.message');
+  document.querySelector('messageBtn').addEventListener('click', event => {
+    messageEl.classList.add('animate__animated', 'animate__fadeInLeftBig');
     message.style.visibility = 'visible';
-    message.classList.add('animate__animated', 'animate__fadeInLeftBig');
   });
 
   /*
